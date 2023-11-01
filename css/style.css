@@ -51,6 +51,17 @@ nav{
 .searchInput::placeholder{
   color: lightgray;
 }
+@keyframes flashColors2 {
+  0%, 100% {
+    color: #4d0080;
+  }
+  25%,75% {
+    color: #aa00ff;
+  }
+  50% {
+    color: #ffffff;
+  }
+}
 
 @keyframes flashColors {
   0%, 100% {
@@ -163,7 +174,7 @@ nav{
   background-repeat: no-repeat;
 }
 #lilac{
-  background-image:image("img/compressedHTL220720B_5084_41433680-1f16-40ae-bb7b-9b6e6589aba6_2048x.jpg");
+  background-image:image('img/compressedHTL220720B_5084_41433680-1f16-40ae-bb7b-9b6e6589aba6_2048x.jpg');
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
@@ -189,7 +200,7 @@ nav{
   background-repeat: no-repeat;
 }
 #airmax{
-  background-image:url("img/blue.jpg");
+  background-image:url('img/blue.jpg');
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,7 +262,7 @@ nav{
 .feature{
   display: flex;
   flex-direction: column;
-  items-align: center;
+
   text-align: center;
 }
 
@@ -286,21 +297,18 @@ nav{
 }
 
 .payment {
-  width: 500px;
-  height: 500px;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 10px 50px;
-  display: none;
-  flex-direction: column;
-  box-shadow: -7px -3px 23px -6px rgba(0, 0, 0, 0.74);
-  -webkit-box-shadow: -7px -3px 23px -6px rgba(0, 0, 0, 0.74);
-  -moz-box-shadow: -7px -3px 23px -6px rgba(0, 0, 0, 0.74);
+padding: 300px;
+
+}
+.pay{
+  /*background-image: url("img/leafy.jpg");*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*border-collapse: collapse;*/
+
+
+
+
 }
 
 .payTitle{
