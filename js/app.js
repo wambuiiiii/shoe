@@ -193,3 +193,40 @@ function prevSlide() {
 showSlide(currentSlide);
 
 setInterval(nextSlide, 3000); // Change slider every 3 seconds
+// Function to perform a search
+function performSearch() {
+  // Get the user's input from the search input field
+  const searchTerm = document.getElementById('searchInput').value;
+
+  // Construct the URL for the search (you need to replace 'YOUR_API_URL' with the actual API you want to use)
+  const apiUrl = `https://www.mediawiki.org/wiki/API:Main_page?q=${searchTerm}`;
+
+  // Make a request to the API using the Fetch API
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      // Process the data from the API (you can customize this part)
+      const searchResults = data.results; // Replace with actual data structure
+
+      // Display the search results in the HTML
+      const searchResultsElement = document.getElementById('searchResults');
+      searchResultsElement.innerHTML = '';
+
+      if (searchResults.length > 0) {
+        searchResults.forEach((result) => {
+          const resultElement = document.createElement('div');
+          resultElement.textContent = result.title; // Adjust this to your data structure
+          searchResultsElement.appendChild(resultElement);
+        });
+      } else {
+        searchResultsElement.textContent = 'No results found.';
+      }
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+}
+
+// Add an event listener to the search button
+const searchButton = document.getElementById('searchButton');
+searchButton.addEventListener('click', performSearch);
